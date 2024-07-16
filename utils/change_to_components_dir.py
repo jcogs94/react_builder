@@ -1,5 +1,7 @@
 import os
 
+# Changes the "source" to the components directory if it exists, else
+# creates it
 def change_to_components_dir(source):
     if os.path.exists(os.path.join(source, 'src')):
         source = os.path.join(source, 'src')

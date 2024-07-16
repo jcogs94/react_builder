@@ -1,5 +1,6 @@
 from utils.create_component import create_component
 
+# Prompts user for wanting a "basic component structure added"
 def init_base_components(source):
     init_components = False
 
@@ -15,9 +16,10 @@ def init_base_components(source):
         else:
             print('Invalid input. Please try again...\n')
     
+    # If user responds 'y', creates Nav, Main, and Footer components
     if init_components:
         print('\nCreating structure...')
         create_component(source, "Nav")
-        create_component(source, "Main")
+        create_component(source, "MainComponent")
         create_component(source, "Footer")
         print('\nBasic structure built...')

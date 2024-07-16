@@ -1,5 +1,6 @@
 from utils.adjust_init_vite import adjust_init_vite
 
+# Prompts user for if they want to adjust the default install files
 def adjust_init_files(source):
     adjust_init = False
     
@@ -15,6 +16,7 @@ def adjust_init_files(source):
         else:
             print('Invalid input. Please try again...\n')
     
+    # If 'y', prompts for creation tool and runs matching function
     if adjust_init:
         valid_input = False
         while not valid_input:

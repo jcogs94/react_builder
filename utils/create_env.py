@@ -1,5 +1,6 @@
 import os
 
+# Prompts user for if need to create .env, if true, creates
 def create_env(source):
     create = False
     
@@ -15,6 +16,7 @@ def create_env(source):
         else:
             print('Invalid input. Please try again...\n')
     
+    # If user responds 'y', creates .env in root dir and adds .env to .gitignore
     if create:
         root = source.replace('/src/components', '')
         env_path = os.path.join(root, '.env')
