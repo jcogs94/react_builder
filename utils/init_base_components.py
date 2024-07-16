@@ -22,4 +22,8 @@ def init_base_components(source):
         create_component(source, "Nav")
         create_component(source, "MainComponent")
         create_component(source, "Footer")
-        print('\nBasic structure built...')
+        print('\nBasic structure built...\n')
+
+        return True
+    else:
+        return False

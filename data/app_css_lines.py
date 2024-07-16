@@ -1,0 +1,20 @@
+app_css_lines = [
+    '* {\n',
+    '    box-sizing: border-box;\n',
+    '    margin: 0;\n',
+    '}\n\n',
+    '#root {\n',
+    '    /* --dark: #1A2130;\n',
+    '    --lighter: #5A72A0;\n',
+    '    --lightest: #FDFFE2;\n',
+    '    --highlight: #83B4FF; */\n        \n',
+    '    min-width: 100vw;\n',
+    '    min-height: 100vh;\n        \n',
+    '    display: flex;\n',
+    '    flex-direction: column;\n',
+    '    align-items: center;\n',
+    '    justify-items: flex-start;\n',
+    '    gap: 40px;\n\n',
+    '    /* background-color: var(--dark); */\n',
+    '}\n'
+]

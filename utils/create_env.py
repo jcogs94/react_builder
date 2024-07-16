@@ -28,3 +28,5 @@ def create_env(source):
             git_ignore_path = os.path.join(root, '.gitignore')
             git_ignore = open(git_ignore_path, 'a')
             git_ignore.write("\n.env\n")
+        
+        print('\n.env created and added to .gitignore...\n')

@@ -2,10 +2,12 @@ import os
 from data.lint_lines import lint_lines
 from data.main_lines import main_lines
 from data.get_index_lines import get_index_lines
+from data.get_app_jsx_lines import get_app_jsx_lines
+from data.app_css_lines import app_css_lines
 
 
 # "Cleans" up default Vite files
-def adjust_init_vite(source):
+def adjust_init_vite(source, base_was_init):
     root = source.replace('/src/components', '')
 
     print('\nAdjusting vite install...')
@@ -17,11 +19,8 @@ def adjust_init_vite(source):
     lint.close()
     print('.eslintrc.cjs adjusted...')
 
-    print("root: " + root)
-
     # Renames title of HTML index and removes React logo
     index_path = os.path.join(root, 'index.html')
-    print(index_path)
     index = open(index_path, 'w')
     index.writelines(get_index_lines(source))
     index.close()
@@ -33,3 +32,17 @@ def adjust_init_vite(source):
     main.writelines(main_lines)
     main.close()
     print('Main.jsx adjusted...')
+    
+    # Cleans up the default App.jsx file and inserts base component references
+    app_jsx_path = os.path.join(root, 'src/App.jsx')
+    app_jsx = open(app_jsx_path, 'w')
+    app_jsx.writelines(get_app_jsx_lines(base_was_init))
+    app_jsx.close()
+    print('App.jsx adjusted...')
+
+    # Cleans up the default App.css file by putting in default styles
+    app_css_path = os.path.join(root, 'src/App.css')
+    app_css = open(app_css_path, 'w')
+    app_css.writelines(app_css_lines)
+    app_css.close()
+    print('App.css adjusted...')

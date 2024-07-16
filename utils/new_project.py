@@ -21,5 +21,5 @@ def new_project(source):
     # If new project, runs other prompts for init changes
     if is_new_project:
         create_env(source)
-        adjust_init_files(source)
-        init_base_components(source)
+        base_was_init = init_base_components(source)
+        adjust_init_files(source, base_was_init)
