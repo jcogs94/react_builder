@@ -41,11 +41,11 @@ def adjust_init_vite(source, base_was_init):
     print('index.html adjusted...')
     
     # Removes Main.css from Main.jsx
-    main_path = os.path.join(root, 'src/Main.jsx')
+    main_path = os.path.join(root, 'src/main.jsx')
     main = open(main_path, 'w')
     main.writelines(main_lines)
     main.close()
-    print('Main.jsx adjusted...')
+    print('main.jsx adjusted...')
     
     # Cleans up the default App.jsx file and inserts base component references
     app_jsx_path = os.path.join(root, 'src/App.jsx')
