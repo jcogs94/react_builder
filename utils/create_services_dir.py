@@ -18,5 +18,10 @@ def create_services_dir(source):
 
     if create:
         services_path = source.replace('/components', '/services')
-        os.mkdir(services_path)
-        print('\nservices directory created...\n')
+        
+        # Creates directory only if it does not already exist
+        if os.path.exists(services_path):
+            print('\nservices directory already exists...\n')
+        else:
+            os.mkdir(services_path)
+            print('\nservices directory created...\n')

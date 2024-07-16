@@ -3,6 +3,7 @@ from utils.get_source import get_source
 from utils.change_to_components_dir import change_to_components_dir
 from utils.new_project import new_project
 from utils.build_components import build_components
+from utils.sign_off import sign_off
 
 
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -13,5 +14,4 @@ source = change_to_components_dir(source)
 
 new_project(source)
 build_components(source)
-
-# /home/jcogs/code/sandbox/python_scripts_testing
+sign_off()

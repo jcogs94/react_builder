@@ -10,28 +10,36 @@ def create_component(source, component_name):
         os.mkdir(component_directory_path)
         print(component_name + ' directory created...')
     else:
-        print(component_name + ' directory exists...')
+        print(component_name + ' directory already exists...')
 
     # Paths for new jsx and css files
     jsx_path = os.path.join(component_directory_path, (component_name + '.jsx'))
     css_path = os.path.join(component_directory_path, (component_name + '.css'))
     
-    # Creates new jsx file and writes boilerplate code
-    jsx_f = open(jsx_path, 'w')
-    jsx_f.writelines([
-        ("import './" + component_name + ".css'\n\n"),
-        ("const " + component_name + " = () => {\n"),
-        "    return <>\n", "        \n", "    </>\n", "}\n\n",
-        ("export default " + component_name + "\n")
-    ])
+    # Checks if file exists and will only create the file if not
+    if os.path.exists(jsx_path):
+        print(component_name + '.jsx already exists...')
+    else:
+        # Creates new jsx file and writes boilerplate code
+        jsx_f = open(jsx_path, 'w')
+        jsx_f.writelines([
+            ("import './" + component_name + ".css'\n\n"),
+            ("const " + component_name + " = () => {\n"),
+            "    return <>\n", "        \n", "    </>\n", "}\n\n",
+            ("export default " + component_name + "\n")
+        ])
 
-    jsx_f.close()
-    print(component_name + '.jsx created...')
-    
-    # Creates empty css file
-    css_f = open(css_path, 'w')
+        jsx_f.close()
+        print(component_name + '.jsx created...')
 
-    css_f.close()
-    print(component_name + '.css created...')
+    # Checks if file exists and will only create the file if not
+    if os.path.exists(css_path):
+        print(component_name + '.css already exists...')
+    else:
+        # Creates empty css file
+        css_f = open(css_path, 'w')
+
+        css_f.close()
+        print(component_name + '.css created...')
 
     print('Done')

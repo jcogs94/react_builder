@@ -20,7 +20,7 @@ def init_base_components(source):
     if init_components:
         print('\nCreating structure...')
         create_component(source, "Nav")
-        create_component(source, "MainComponent")
+        create_component(source, "MainContainer")
         create_component(source, "Footer")
         print('\nBasic structure built...\n')
 
