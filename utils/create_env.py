@@ -6,7 +6,7 @@ def create_env(source):
     
     valid_input = False
     while not valid_input:
-        user_input = input('Would you like to create an env file (y/n)? ')
+        user_input = input('Would you like to create a .env file (y/n)? ')
 
         if user_input.lower() == 'y':
             create = True
