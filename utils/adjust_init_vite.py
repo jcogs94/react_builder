@@ -1,4 +1,5 @@
 import os
+from data.vite_config_lines import vite_config_lines
 from data.lint_lines import lint_lines
 from data.main_lines import main_lines
 from data.get_index_lines import get_index_lines
@@ -10,7 +11,20 @@ from data.app_css_lines import app_css_lines
 def adjust_init_vite(source, base_was_init):
     root = source.replace('/src/components', '')
 
-    print('\nAdjusting vite install...')
+    print('\nAdjusting vite install...\n')
+
+    # Wipes the init README clean
+    readme_path = os.path.join(root, 'README.md')
+    readme = open(readme_path, 'w')
+    readme.close()
+    print('README.md adjusted...')
+
+    # Adds lines to vite.config for later deploy
+    config_path = os.path.join(root, 'vite.config.js')
+    config = open(config_path, 'w')
+    config.writelines(vite_config_lines)
+    config.close()
+    print('vite.config.js adjusted...')
 
     # Adds lines to lint
     lint_path = os.path.join(root, '.eslintrc.cjs')
