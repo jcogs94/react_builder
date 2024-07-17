@@ -38,7 +38,7 @@ def create_component(source, component_name):
     else:
         # Creates empty css file
         css_f = open(css_path, 'w')
-
+        css_f.write('\n')
         css_f.close()
         print(component_name + '.css created...')
 
