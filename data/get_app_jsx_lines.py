@@ -4,7 +4,7 @@ def get_app_jsx_lines(base_was_init):
     if base_was_init:
         app_jsx_lines.extend([
             "import Nav from './components/Nav/Nav.jsx'\n",
-            "import MainComponent from './components/MainContainer/MainContainer.jsx'\n",
+            "import MainContainer from './components/MainContainer/MainContainer.jsx'\n",
             "import Footer from './components/Footer/Footer.jsx'\n",
         ])
 
