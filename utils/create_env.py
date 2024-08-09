@@ -21,8 +21,14 @@ def create_env(source):
         root = source.replace('/src/components', '')
         env_path = os.path.join(root, '.env')
 
-        env = open(env_path, 'w')
-        env.close()
+        env_f = open(env_path, 'w')
+
+        env_f.writelines([
+            ("VITE_BACK_END_SERVER_URL='http://localhost:3000'\n"),
+            ("# VITE_BACK_END_SERVER_URL='http://104.3.55.140:3000'")
+        ])
+
+        env_f.close()
 
         if os.path.exists(os.path.join(root, '.gitignore')):
             git_ignore_path = os.path.join(root, '.gitignore')
