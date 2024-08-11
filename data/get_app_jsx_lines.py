@@ -3,8 +3,9 @@ def get_app_jsx_lines(base_was_init):
 
     if base_was_init:
         app_jsx_lines.extend([
+            "import { Route, Routes } from 'react-router-dom'\n",
             "import Nav from './components/Nav/Nav.jsx'\n",
-            "import MainContainer from './components/MainContainer/MainContainer.jsx'\n",
+            "import Home from './components/Home/Home.jsx'\n",
             "import Footer from './components/Footer/Footer.jsx'\n",
         ])
 
@@ -17,7 +18,11 @@ def get_app_jsx_lines(base_was_init):
     if base_was_init:
         app_jsx_lines.extend([
             "        <Nav />\n",
-            "        <MainComponent />\n",
+            "        <main>\n",
+            "           <Routes>\n",
+            "               <Route path='/' element={<Home />} />\n",
+            "           </Routes>\n",
+            "        </main>\n",
             "        <Footer />\n"
         ])
     else:
