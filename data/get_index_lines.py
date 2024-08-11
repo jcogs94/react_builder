@@ -2,7 +2,6 @@ def get_index_lines(source):
     root = source.replace('/src/components', '')
     
     if '/frontend' in root:
-        print('True')
         root = root.replace('/frontend', '')
     
     directories = root.split('/')
